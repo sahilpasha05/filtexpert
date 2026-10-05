@@ -1,0 +1,6 @@
+{
+  "name": "FILTEXPERT - Industrial Filtration & Compressor Components",
+  "description": "Industrial filtration and compressor-related components engineered for demanding applications. Comprehensive product catalogue, technical guides, and B2B RFQ support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
