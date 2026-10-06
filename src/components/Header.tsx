@@ -32,9 +32,9 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-18">
+      <header className="sticky top-0 z-40 w-full pt-3 sm:pt-4 px-3 sm:px-6 lg:px-8 pointer-events-none transition-all">
+        <div className="max-w-7xl mx-auto pointer-events-auto bg-white/95 backdrop-blur-md rounded-full border border-slate-200/90 shadow-sm shadow-slate-900/5 px-4 sm:px-6">
+          <div className="flex items-center justify-between h-16">
             {/* Zone 1: Single text element brand wordmark */}
             <div className="flex items-center">
               <Link
@@ -50,7 +50,7 @@ export const Header: React.FC = () => {
             <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-[#17212B]">
               {/* Products Mega Dropdown */}
               <div
-                className="relative py-5"
+                className="relative py-4"
                 onMouseEnter={() => handleMouseEnter('products')}
                 onMouseLeave={handleMouseLeave}
               >
@@ -69,7 +69,7 @@ export const Header: React.FC = () => {
                 </Link>
 
                 {activeDropdown === 'products' && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[720px] bg-white rounded-xl shadow-xl border border-slate-200 p-6 animate-in fade-in slide-in-from-top-2 duration-150">
+                  <div className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-[720px] bg-white rounded-2xl shadow-xl border border-slate-200 p-6 animate-in fade-in slide-in-from-top-2 duration-150">
                     <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
                       <div>
                         <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F33]">
@@ -110,7 +110,7 @@ export const Header: React.FC = () => {
 
               {/* Industries Dropdown */}
               <div
-                className="relative py-5"
+                className="relative py-4"
                 onMouseEnter={() => handleMouseEnter('industries')}
                 onMouseLeave={handleMouseLeave}
               >
@@ -129,7 +129,7 @@ export const Header: React.FC = () => {
                 </Link>
 
                 {activeDropdown === 'industries' && (
-                  <div className="absolute top-full left-0 w-[420px] bg-white rounded-xl shadow-xl border border-slate-200 p-5 animate-in fade-in slide-in-from-top-2 duration-150">
+                  <div className="absolute top-[calc(100%+8px)] left-0 w-[420px] bg-white rounded-2xl shadow-xl border border-slate-200 p-5 animate-in fade-in slide-in-from-top-2 duration-150">
                     <div className="pb-3 border-b border-slate-100 mb-3">
                       <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F33]">
                         Sectors & Industrial Applications
@@ -180,7 +180,7 @@ export const Header: React.FC = () => {
 
               {/* Resources Dropdown */}
               <div
-                className="relative py-5"
+                className="relative py-4"
                 onMouseEnter={() => handleMouseEnter('resources')}
                 onMouseLeave={handleMouseLeave}
               >
@@ -199,7 +199,7 @@ export const Header: React.FC = () => {
                 </Link>
 
                 {activeDropdown === 'resources' && (
-                  <div className="absolute top-full left-0 w-[280px] bg-white rounded-xl shadow-xl border border-slate-200 p-4 animate-in fade-in slide-in-from-top-2 duration-150">
+                  <div className="absolute top-[calc(100%+8px)] left-0 w-[280px] bg-white rounded-2xl shadow-xl border border-slate-200 p-4 animate-in fade-in slide-in-from-top-2 duration-150">
                     <div className="space-y-1">
                       <Link
                         to="/resources"
@@ -248,12 +248,12 @@ export const Header: React.FC = () => {
             </nav>
 
             {/* Zone 3: Search button + 1 primary action */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
               {/* Search Trigger */}
               <button
                 type="button"
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2.5 text-[#17212B] hover:text-[#0B1F33] hover:bg-slate-100 rounded-md transition-colors focus:outline-none"
+                className="p-2 text-[#17212B] hover:text-[#0B1F33] hover:bg-slate-100 rounded-full transition-colors focus:outline-none"
                 aria-label="Search website"
                 title="Search products and resources"
               >
@@ -263,7 +263,7 @@ export const Header: React.FC = () => {
               {/* Primary Quote Action Button */}
               <Link
                 to="/request-a-quote"
-                className="hidden sm:inline-flex items-center justify-center px-4.5 py-2.5 text-xs font-bold text-white bg-[#0B1F33] rounded-md hover:bg-[#123B5D] transition-colors shadow-xs whitespace-nowrap"
+                className="hidden sm:inline-flex items-center justify-center px-5 py-2 text-xs font-bold text-white bg-[#0B1F33] rounded-full hover:bg-[#123B5D] transition-colors shadow-xs whitespace-nowrap"
               >
                 Request a Quote
               </Link>
@@ -272,10 +272,10 @@ export const Header: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-[#0B1F33] hover:bg-slate-100 rounded-md transition-colors focus:outline-none"
+                className="lg:hidden p-2 text-[#0B1F33] hover:bg-slate-100 rounded-full transition-colors focus:outline-none"
                 aria-label="Toggle mobile menu"
               >
-                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
@@ -283,7 +283,7 @@ export const Header: React.FC = () => {
 
         {/* Mobile Slide-down Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-200 bg-white max-h-[80vh] overflow-y-auto px-4 py-6 space-y-4 animate-in slide-in-from-top duration-200">
+          <div className="lg:hidden max-w-7xl mx-auto pointer-events-auto mt-2 rounded-2xl border border-slate-200 bg-white shadow-xl max-h-[80vh] overflow-y-auto px-5 py-6 space-y-4 animate-in slide-in-from-top-2 duration-200">
             <div className="space-y-1">
               <div className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#667085]">
                 Navigation

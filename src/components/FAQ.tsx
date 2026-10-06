@@ -47,11 +47,15 @@ export const FAQ: React.FC<FAQProps> = ({
                 </span>
               </button>
 
-              {isOpen && (
-                <div className="mt-3 pr-8 text-sm leading-relaxed text-[#17212B]">
+              <div
+                className={`grid transition-all duration-200 ease-out ${
+                  isOpen ? 'grid-rows-[1fr] opacity-100 mt-3' : 'grid-rows-[0fr] opacity-0'
+                }`}
+              >
+                <div className="overflow-hidden pr-8 text-sm leading-relaxed text-[#17212B]">
                   {item.answer}
                 </div>
-              )}
+              </div>
             </div>
           );
         })}

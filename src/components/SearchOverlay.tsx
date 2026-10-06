@@ -89,7 +89,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
     >
       <div className="w-full max-w-4xl mx-auto px-4 pt-10 sm:pt-16 pb-6 flex-1 flex flex-col">
         {/* Search Modal Card */}
-        <div className="bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh]">
+        <div className="bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh] transition-all duration-200 transform animate-in zoom-in-95 fade-in">
           {/* Header & Search Bar */}
           <div className="relative border-b border-slate-200 p-4 sm:p-5 flex items-center gap-3">
             <Search className="w-5 h-5 text-[#667085] shrink-0" />

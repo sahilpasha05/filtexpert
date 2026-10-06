@@ -28,10 +28,10 @@ const getIndustryIcon = (iconName: string) => {
 
 export const IndustryCard: React.FC<IndustryCardProps> = ({ industry }) => {
   return (
-    <div className="group relative flex flex-col justify-between bg-white rounded-lg border border-slate-200 p-6 transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-0.5">
+    <div className="group relative flex flex-col justify-between bg-white rounded-lg border border-slate-200 p-6 transition-all duration-200 ease-out hover:shadow-lg hover:border-slate-300 hover:-translate-y-1">
       <div>
         <div className="flex items-center justify-between mb-4">
-          <div className="w-10 h-10 rounded-md bg-slate-100 flex items-center justify-center transition-colors group-hover:bg-[#0B1F33]/5">
+          <div className="w-10 h-10 rounded-md bg-slate-100 flex items-center justify-center transition-all duration-200 group-hover:bg-[#0B1F33]/5 group-hover:scale-105">
             {getIndustryIcon(industry.iconName)}
           </div>
           <span className="text-[11px] font-mono text-[#667085] uppercase tracking-wider">

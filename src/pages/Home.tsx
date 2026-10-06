@@ -72,52 +72,52 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
               {/* Left Column: Headlines & CTAs */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#F28C28] uppercase">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#F28C28]" />
+                <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#F28C28] uppercase animate-fade-up">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#F28C28] animate-pulse-glow" />
                   <span>Engineering & Industrial Filtration Solutions</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight" style={{ textWrap: 'balance' }}>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight animate-fade-up delay-100" style={{ textWrap: 'balance' }}>
                   Industrial Filtration & Compressor Components Engineered for Performance
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed animate-fade-up delay-200">
                   Reliable filtration, sealing and compressor components for demanding industrial applications. Designed for maximum uptime and operational protection.
                 </p>
 
                 {/* Primary & Secondary Buttons */}
-                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 animate-fade-up delay-300">
                   <Link
                     to="/products"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-[#F28C28] rounded-md hover:bg-[#E07D1C] transition-all shadow-sm focus:outline-none whitespace-nowrap"
+                    className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-[#F28C28] rounded-md hover:bg-[#E07D1C] transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 focus:outline-none whitespace-nowrap"
                   >
                     <span>Explore Products</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
 
                   <Link
                     to="/request-a-quote"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-[#123B5D] border border-slate-700 rounded-md hover:bg-slate-800 transition-all focus:outline-none whitespace-nowrap"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-[#123B5D] border border-slate-700 rounded-md hover:bg-slate-800 transition-all duration-200 hover:-translate-y-0.5 focus:outline-none whitespace-nowrap"
                   >
                     <span>Request a Quote</span>
                   </Link>
                 </div>
 
                 {/* Trust Points (strictly no fake statistics) */}
-                <div className="pt-6 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-slate-300">
-                  <div className="flex items-center gap-2">
+                <div className="pt-6 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-slate-300 animate-fade-up delay-400">
+                  <div className="flex items-center gap-2 hover:text-white transition-colors">
                     <CheckCircle className="w-4 h-4 text-[#F28C28] shrink-0" />
                     <span>Industrial Applications</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 hover:text-white transition-colors">
                     <CheckCircle className="w-4 h-4 text-[#F28C28] shrink-0" />
                     <span>Technical Product Range</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 hover:text-white transition-colors">
                     <CheckCircle className="w-4 h-4 text-[#F28C28] shrink-0" />
                     <span>B2B Enquiry Support</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 hover:text-white transition-colors">
                     <CheckCircle className="w-4 h-4 text-[#F28C28] shrink-0" />
                     <span>Quality-Focused Solutions</span>
                   </div>
@@ -125,13 +125,13 @@ export const Home: React.FC = () => {
               </div>
 
               {/* Right Column: Hero Visual Asset */}
-              <div className="lg:col-span-5">
-                <div className="relative rounded-xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-900 group">
+              <div className="lg:col-span-5 animate-fade-in delay-200">
+                <div className="relative rounded-xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-900 group transition-transform duration-500 hover:shadow-2xl hover:border-slate-600">
                   <div className="aspect-4/3 overflow-hidden">
                     <img
                       src={IMAGES.heroCompressor}
                       alt="Industrial air compressor filtration system"
-                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-102"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
 

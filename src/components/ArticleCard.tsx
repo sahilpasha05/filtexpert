@@ -9,12 +9,12 @@ interface ArticleCardProps {
 
 export const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   return (
-    <article className="group flex flex-col bg-white rounded-lg border border-slate-200 overflow-hidden transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-0.5">
+    <article className="group flex flex-col bg-white rounded-lg border border-slate-200 overflow-hidden transition-all duration-200 ease-out hover:shadow-lg hover:border-slate-300 hover:-translate-y-1">
       <div className="relative aspect-16/9 overflow-hidden bg-slate-100 border-b border-slate-100">
         <img
           src={article.image}
           alt={article.title}
-          className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+          className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-108"
           loading="lazy"
           referrerPolicy="no-referrer"
           onError={(e) => {

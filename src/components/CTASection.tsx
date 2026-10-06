@@ -41,15 +41,15 @@ export const CTASection: React.FC<CTASectionProps> = ({
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
           <Link
             to="/request-a-quote"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-[#F28C28] rounded-md hover:bg-[#E07D1C] transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F28C28] whitespace-nowrap"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-[#F28C28] rounded-md hover:bg-[#E07D1C] transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F28C28] whitespace-nowrap"
           >
             <span>{primaryBtnText}</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
           </Link>
 
           <Link
             to="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-[#123B5D] border border-slate-700 rounded-md hover:bg-slate-800 transition-all focus:outline-none whitespace-nowrap"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-[#123B5D] border border-slate-700 rounded-md hover:bg-slate-800 transition-all duration-200 hover:-translate-y-0.5 focus:outline-none whitespace-nowrap"
           >
             <PhoneCall className="w-4 h-4 text-slate-300" />
             <span>{secondaryBtnText}</span>
