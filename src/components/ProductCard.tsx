@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, SlidersHorizontal } from 'lucide-react';
+import { ArrowRight, SlidersHorizontal, ArrowUpRight } from 'lucide-react';
+import { motion } from 'motion/react';
 import { Product } from '../types';
 
 interface ProductCardProps {
@@ -10,17 +11,21 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <article className="group flex flex-col bg-white rounded-lg border border-slate-200 overflow-hidden transition-all duration-200 ease-out hover:shadow-lg hover:border-slate-300 hover:-translate-y-1">
+    <motion.article 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      className="group flex flex-col bg-white rounded-2xl border border-slate-200/90 overflow-hidden transition-all duration-300 ease-out hover:shadow-xl hover:border-slate-300 hover:-translate-y-1"
+    >
       {/* Product Image Area */}
       <div className="relative aspect-4/3 overflow-hidden bg-slate-100 border-b border-slate-100">
         <img
           src={product.image}
           alt={product.name}
-          className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-108"
+          className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-106 will-change-transform"
           loading="lazy"
-          referrerPolicy="no-referrer"
           onError={(e) => {
-            // Fallback gracefully to industrial gradient if missing
             (e.currentTarget as HTMLElement).style.display = 'none';
           }}
         />
@@ -29,45 +34,45 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <SlidersHorizontal className="w-10 h-10 mb-2 stroke-1 text-[#123B5D]" />
           <span className="text-xs font-mono text-[#0B1F33] font-medium text-center">{product.name}</span>
         </div>
+
+        {/* Minimal Category Marker */}
+        <div className="absolute top-3 left-3 bg-[#0B1F33]/85 text-white border border-white/10 text-[10px] font-mono tracking-wider px-2 py-0.5 rounded backdrop-blur-xs">
+          {product.category}
+        </div>
       </div>
 
       {/* Card Content */}
       <div className="flex flex-1 flex-col p-5 sm:p-6 justify-between">
         <div>
-          {/* Zero-Pill category: clean unboxed metadata */}
-          <div className="text-xs font-semibold uppercase tracking-wider text-[#667085] mb-2">
-            {product.category}
-          </div>
-
-          <h3 className="text-lg font-bold text-[#0B1F33] leading-snug group-hover:text-[#123B5D] transition-colors">
-            <Link to={`/products/${product.slug}`} className="focus:outline-none">
-              {product.name}
+          <h3 className="text-lg font-bold text-[#0B1F33] leading-snug group-hover:text-[#F28C28] transition-colors">
+            <Link to={`/products/${product.slug}`} className="focus:outline-none flex items-start justify-between gap-2">
+              <span>{product.name}</span>
+              <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#F28C28] transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0 mt-0.5" />
             </Link>
           </h3>
 
-          <p className="mt-2.5 text-xs sm:text-sm text-[#17212B]/80 leading-relaxed line-clamp-3">
+          <p className="mt-2.5 text-xs sm:text-sm text-[#17212B]/75 leading-relaxed line-clamp-2">
             {product.shortDescription}
           </p>
         </div>
 
         {/* Action Footers */}
-        <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+        <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
           <Link
             to={`/products/${product.slug}`}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B1F33] hover:text-[#F28C28] transition-colors group/link"
+            className="font-bold text-[#0B1F33] group-hover:text-[#F28C28] transition-colors"
           >
-            <span>View Product</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
+            Technical Dossier →
           </Link>
-
+          
           <Link
             to={`/request-a-quote?product=${encodeURIComponent(product.name)}`}
-            className="text-[11px] font-medium text-[#667085] hover:text-[#0B1F33] hover:underline transition-colors"
+            className="font-mono text-[#667085] hover:text-[#0B1F33] transition-colors text-[11px]"
           >
-            Quote
+            RFQ Quote
           </Link>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 };

@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Manrope', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --color-brand-primary: #0B1F33;
   --color-brand-secondary: #123B5D;
@@ -13,96 +14,87 @@
   --color-brand-muted: #667085;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
   color: #17212B;
-  background-color: #F5F7F9;
+  background-color: #0B1F33;
+  overflow-x: hidden;
+}
+
+/* Typographic scale inspired by premium engineering brands */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-display-hero {
+  font-size: clamp(3.25rem, 7.5vw, 7.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.text-display-section {
+  font-size: clamp(2.4rem, 4.8vw, 4.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.text-display-sub {
+  font-size: clamp(1.4rem, 2.4vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 /* Subtle industrial grid background pattern */
 .bg-grid-pattern {
-  background-image: linear-gradient(to right, rgba(11, 31, 51, 0.04) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(11, 31, 51, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: linear-gradient(to right, rgba(11, 31, 51, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(11, 31, 51, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
 }
 
 .bg-grid-pattern-dark {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-/* Animations & Micro-interactions */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Subtle dot matrix */
+.bg-dot-matrix-dark {
+  background-image: radial-gradient(rgba(242, 140, 40, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* Smooth glass effect */
+.glass-panel {
+  background: rgba(11, 31, 51, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(1.3);
-  }
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
-@keyframes subtleFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
+/* Technical hairline divider */
+.hairline-orange {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #F28C28 50%, transparent);
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+/* Image reveal animations & smooth transitions */
+.img-editorial {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out both;
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 2.5s infinite ease-in-out;
-}
-
-.animate-float-slow {
-  animation: subtleFloat 4s ease-in-out infinite;
-}
-
-.delay-100 {
-  animation-delay: 100ms;
-}
-
-.delay-200 {
-  animation-delay: 200ms;
-}
-
-.delay-300 {
-  animation-delay: 300ms;
-}
-
-.delay-400 {
-  animation-delay: 400ms;
+.img-editorial:hover {
+  transform: scale(1.04);
 }
 
 /* Respect user's motion preferences */

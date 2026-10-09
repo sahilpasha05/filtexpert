@@ -1,68 +1,56 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Wind, Factory, Wrench, HardHat, Mountain, Zap } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { motion } from 'motion/react';
 import { Industry } from '../types';
 
 interface IndustryCardProps {
   industry: Industry;
 }
 
-const getIndustryIcon = (iconName: string) => {
-  switch (iconName) {
-    case 'Wind':
-      return <Wind className="w-5 h-5 text-[#F28C28]" />;
-    case 'Factory':
-      return <Factory className="w-5 h-5 text-[#F28C28]" />;
-    case 'Wrench':
-      return <Wrench className="w-5 h-5 text-[#F28C28]" />;
-    case 'HardHat':
-      return <HardHat className="w-5 h-5 text-[#F28C28]" />;
-    case 'Mountain':
-      return <Mountain className="w-5 h-5 text-[#F28C28]" />;
-    case 'Zap':
-      return <Zap className="w-5 h-5 text-[#F28C28]" />;
-    default:
-      return <Factory className="w-5 h-5 text-[#F28C28]" />;
-  }
-};
-
 export const IndustryCard: React.FC<IndustryCardProps> = ({ industry }) => {
   return (
-    <div className="group relative flex flex-col justify-between bg-white rounded-lg border border-slate-200 p-6 transition-all duration-200 ease-out hover:shadow-lg hover:border-slate-300 hover:-translate-y-1">
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <div className="w-10 h-10 rounded-md bg-slate-100 flex items-center justify-center transition-all duration-200 group-hover:bg-[#0B1F33]/5 group-hover:scale-105">
-            {getIndustryIcon(industry.iconName)}
-          </div>
-          <span className="text-[11px] font-mono text-[#667085] uppercase tracking-wider">
-            Industrial
+    <motion.article 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      className="group bg-white rounded-2xl border border-slate-200/90 overflow-hidden flex flex-col justify-between hover:shadow-xl hover:border-slate-300 transition-all duration-300 hover:-translate-y-1"
+    >
+      <div className="aspect-16/9 overflow-hidden bg-slate-900 relative">
+        <img
+          src={industry.heroImage || '/images/industries/industry_heavy_facility.jpg'}
+          alt={industry.name}
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-106 will-change-transform"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33] via-[#0B1F33]/30 to-transparent" />
+        <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between">
+          <h3 className="text-white font-bold text-lg sm:text-xl font-display">
+            {industry.name}
+          </h3>
+          <span className="text-[10px] font-mono text-[#F28C28] bg-black/40 px-2 py-0.5 rounded border border-white/10">
+            {industry.relevantProductSlugs.length} Spares
           </span>
         </div>
+      </div>
 
-        <h3 className="text-lg font-bold text-[#0B1F33] group-hover:text-[#123B5D] transition-colors">
-          <Link to={`/industries/${industry.slug}`} className="focus:outline-none">
-            {industry.name}
-          </Link>
-        </h3>
-
-        <p className="mt-2.5 text-xs sm:text-sm text-[#17212B]/80 leading-relaxed">
+      <div className="p-6 flex-1 flex flex-col justify-between">
+        <p className="text-xs sm:text-sm text-[#17212B]/80 leading-relaxed line-clamp-3">
           {industry.shortDescription}
         </p>
-      </div>
 
-      <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-        <Link
-          to={`/industries/${industry.slug}`}
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B1F33] hover:text-[#F28C28] transition-colors group/link"
-        >
-          <span>Explore Industry</span>
-          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
-        </Link>
-        
-        <span className="text-[11px] text-[#667085] font-mono">
-          {industry.relevantProductSlugs.length} Products
-        </span>
+        <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+          <Link
+            to={`/industries/${industry.slug}`}
+            className="font-bold text-[#0B1F33] group-hover:text-[#F28C28] flex items-center gap-1.5 transition-colors"
+          >
+            <span>Explore Solutions</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <span className="font-mono text-slate-400 text-[11px]">Industrial Sector</span>
+        </div>
       </div>
-    </div>
+    </motion.article>
   );
 };
