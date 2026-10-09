@@ -17,6 +17,7 @@ export interface Product {
   shortDescription: string;
   description: string;
   image: string;
+  galleryImages?: string[];
   isFeatured?: boolean;
   applications: string[];
   industries: string[];

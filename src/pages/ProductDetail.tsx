@@ -30,6 +30,9 @@ export const ProductDetail: React.FC = () => {
     return <Navigate to="/products" replace />;
   }
 
+  const allImages = [product.image, ...(product.galleryImages || [])];
+  const [activeImage, setActiveImage] = useState<string>(product.image);
+
   // Related products
   const relatedProducts = products
     .filter((p) => p.slug !== product.slug && (product.relatedProductSlugs?.includes(p.slug) || p.category === product.category))
@@ -84,15 +87,39 @@ export const ProductDetail: React.FC = () => {
               <div className="lg:col-span-6 space-y-3">
                 <div className="aspect-4/3 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 relative group">
                   <img
-                    src={product.image}
+                    src={activeImage}
                     alt={product.name}
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center transition-all duration-300"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute top-3 left-3 bg-[#0B1F33]/85 text-white text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded backdrop-blur-xs">
                     Industrial Specimen
                   </div>
                 </div>
+
+                {/* Thumbnails row if multiple images exist */}
+                {allImages.length > 1 && (
+                  <div className="flex items-center gap-2 overflow-x-auto pb-1">
+                    {allImages.map((img, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setActiveImage(img)}
+                        className={`w-16 h-14 rounded-lg overflow-hidden border-2 shrink-0 transition-all ${
+                          activeImage === img
+                            ? 'border-[#F28C28] ring-2 ring-[#F28C28]/20 shadow-xs'
+                            : 'border-slate-200 hover:border-slate-300 opacity-70 hover:opacity-100'
+                        }`}
+                      >
+                        <img
+                          src={img}
+                          alt={`${product.name} view ${i + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
 
                 <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-between text-xs text-[#667085]">
                   <span>Application: {product.specifications.find(s => s.label === 'Application')?.value ?? 'Industrial'}</span>

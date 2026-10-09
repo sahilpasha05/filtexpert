@@ -191,7 +191,7 @@ export const Home: React.FC = () => {
               <div className="lg:col-span-5">
                 <div className="relative rounded-lg overflow-hidden border border-slate-200 bg-slate-100 shadow-sm">
                   <img
-                    src={IMAGES.productFilters}
+                    src="/images/products/flitexpert/IMG-20261009-WA0003.jpg"
                     alt="Industrial filtration components showcase"
                     className="w-full aspect-4/3 object-cover"
                   />

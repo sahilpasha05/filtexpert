@@ -10,7 +10,13 @@ export const products: Product[] = [
     isFeatured: true,
     shortDescription: "Filtration solutions for air compressor applications and industrial equipment.",
     description: "Filtexpert air compressor filters are engineered to protect compressed air systems from airborne particulate contaminants, dust, and particulate debris. Designed for rotary screw, reciprocating, and centrifugal air compressors, our filtration solutions ensure consistent system protection and operational efficiency.",
-    image: IMAGES.productFilters,
+    image: "/images/products/flitexpert/IMG-20261009-WA0002.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0003.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0004.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0005.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0001.jpg"
+    ],
     applications: [
       "Rotary screw air compressors",
       "Reciprocating compressor air intake systems",
@@ -67,7 +73,13 @@ export const products: Product[] = [
     isFeatured: true,
     shortDescription: "Industrial oil filtration solutions designed for demanding operating environments.",
     description: "Filtexpert industrial oil filters provide critical lubrication protection for rotary compressors, hydraulic circuits, and heavy industrial machinery. By capturing metallic wear debris, carbon deposits, and oxidation particulates, these filters prolong lubricating oil life and prevent premature component failure.",
-    image: IMAGES.productFilters,
+    image: "/images/products/flitexpert/IMG-20261009-WA0008.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0009.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0010.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0006.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0007.jpg"
+    ],
     applications: [
       "Compressor lubrication circuits",
       "Hydraulic power packs",
@@ -118,7 +130,12 @@ export const products: Product[] = [
     isFeatured: false,
     shortDescription: "Air filtration products for industrial machinery and equipment.",
     description: "Filtexpert general industrial air filters provide particulate intake protection for engines, ventilation systems, industrial blowers, and stationary plant machinery. Engineered with robust media pleating, these elements maintain low initial pressure drop while delivering dependable dust capture.",
-    image: IMAGES.heroCompressor,
+    image: "/images/products/flitexpert/IMG-20261009-WA0011.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0012.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0013.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0014.jpg"
+    ],
     applications: [
       "Stationary industrial engines",
       "Industrial blowers and vacuum pumps",
@@ -165,7 +182,12 @@ export const products: Product[] = [
     isFeatured: true,
     shortDescription: "Air oil separation solutions for compressor applications.",
     description: "Filtexpert air oil separators are vital elements for oil-injected rotary screw and vane compressors. Using progressive multi-stage coalescing borosilicate micro-glass media, they separate lubricating oil mist from compressed air, minimizing residual oil carryover and recovering valuable compressor fluid.",
-    image: IMAGES.productFilters,
+    image: "/images/products/flitexpert/IMG-20261009-WA0016.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0017.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0015.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0018.jpg"
+    ],
     applications: [
       "Oil-injected rotary screw compressors",
       "Rotary vane compressor systems",
@@ -216,7 +238,12 @@ export const products: Product[] = [
     isFeatured: true,
     shortDescription: "Gasket kits for air compressor maintenance and component sealing.",
     description: "Filtexpert air compressor gasket kits provide complete sealing solutions for overhaul and preventive maintenance of rotary screw and reciprocating compressors. Manufactured with precision die-cutting and non-asbestos composite or elastomeric materials, they prevent air leaks, oil weeping, and vacuum loss.",
-    image: IMAGES.productGasketsValves,
+    image: "/images/products/flitexpert/IMG-20261009-WA0020.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0021.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0022.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0019.jpg"
+    ],
     applications: [
       "Compressor cylinder head rebuilds",
       "Valve plate and unloader overhaul",
@@ -262,7 +289,12 @@ export const products: Product[] = [
     isFeatured: false,
     shortDescription: "Intake valve components for air compressor applications.",
     description: "Filtexpert intake valves (also known as inlet unloader valves) modulate air intake into rotary screw and reciprocating compressors. Designed for responsive pneumatic or electro-pneumatic actuation, they ensure smooth transition between loaded, modulated, and unloaded operational cycles.",
-    image: IMAGES.productGasketsValves,
+    image: "/images/products/flitexpert/IMG-20261009-WA0024.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0025.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0026.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0023.jpg"
+    ],
     applications: [
       "Rotary screw compressor inlet control",
       "Capacity modulation systems",
@@ -307,7 +339,12 @@ export const products: Product[] = [
     isFeatured: false,
     shortDescription: "Valve kits for compressor servicing and maintenance applications.",
     description: "Filtexpert compressor valve kits include matched sets of minimum pressure valves, check valves, thermostatic valves, and blowdown valves. These kits provide service technicians with all essential precision internals required to restore system pressure regulation and thermal stability.",
-    image: IMAGES.productGasketsValves,
+    image: "/images/products/flitexpert/IMG-20261009-WA0028.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0029.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0030.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0031.jpg"
+    ],
     applications: [
       "Minimum pressure valve (MPV) maintenance",
       "Thermostatic mixing valve rebuilds",
@@ -351,7 +388,12 @@ export const products: Product[] = [
     isFeatured: false,
     shortDescription: "Industrial hose pipe assemblies for compressor and equipment applications.",
     description: "Filtexpert industrial hose pipe assemblies are engineered for high-temperature compressed air transfer, oil return lines, hydraulic connections, and cooling water circuits. Built with wire-braided synthetic elastomers and crimped steel end fittings, they isolate vibration and provide leak-tight fluid conveyance.",
-    image: IMAGES.industryFacility,
+    image: "/images/products/flitexpert/IMG-20261009-WA0032.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0033.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0034.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0035.jpg"
+    ],
     applications: [
       "Compressor discharge lines",
       "Oil cooler connection hoses",
@@ -398,7 +440,12 @@ export const products: Product[] = [
     isFeatured: false,
     shortDescription: "Industrial rubber gasket solutions for sealing applications.",
     description: "Filtexpert industrial rubber gaskets are custom die-cut and molded for sealing critical interfaces against oil, air, water, and industrial chemical exposure. Available in NBR, EPDM, Silicone, and Viton (FKM), these gaskets ensure long-term compression set resistance in severe industrial operating environments.",
-    image: IMAGES.productGasketsValves,
+    image: "/images/products/flitexpert/IMG-20261009-WA0037.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0038.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0036.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0041.jpg"
+    ],
     applications: [
       "Pipe flange joints and duct connections",
       "Enclosure and housing sealing",
@@ -444,7 +491,12 @@ export const products: Product[] = [
     isFeatured: false,
     shortDescription: "Air treatment solutions for compressed air systems.",
     description: "Filtexpert refrigerated air dryers remove moisture vapor from compressed air streams, preventing condensation, pipe corrosion, and tool malfunction in downstream plant processes. Operating with eco-friendly refrigerants and high-efficiency heat exchangers, they deliver reliable dew point performance.",
-    image: IMAGES.heroCompressor,
+    image: "/images/products/flitexpert/IMG-20261009-WA0042.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0043.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0044.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0045.jpg"
+    ],
     applications: [
       "Plant compressed air moisture removal",
       "Pneumatic automated production lines",
@@ -490,7 +542,12 @@ export const products: Product[] = [
     isFeatured: false,
     shortDescription: "Control components for compressor and industrial equipment applications.",
     description: "Filtexpert compressor controllers provide intelligent microprocessor-based monitoring, sequencing, and fault protection for single and multi-compressor installations. Featuring crisp industrial displays and configurable setpoints, they optimize running hours and safeguard equipment against abnormal parameters.",
-    image: IMAGES.industryFacility,
+    image: "/images/products/flitexpert/IMG-20261009-WA0046.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0047.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0048.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0049.jpg"
+    ],
     applications: [
       "Rotary screw compressor control panels",
       "Multi-machine lead-lag sequencing",
@@ -536,7 +593,12 @@ export const products: Product[] = [
     isFeatured: false,
     shortDescription: "Filtration products for heavy machinery and demanding industrial environments.",
     description: "Filtexpert heavy-duty machinery filters are built to withstand extreme vibration, severe dust storms, and shock loads encountered in mining, quarrying, construction, and earthmoving applications. Engineered with reinforced outer casings and high-capacity multi-density media, they protect engines and hydraulics under non-stop operations.",
-    image: IMAGES.productFilters,
+    image: "/images/products/flitexpert/IMG-20261009-WA0051.jpg",
+    galleryImages: [
+      "/images/products/flitexpert/IMG-20261009-WA0052.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0054.jpg",
+      "/images/products/flitexpert/IMG-20261009-WA0058.jpg"
+    ],
     applications: [
       "Excavators, wheel loaders, and bulldozers",
       "Crushers, screeners, and quarry processing equipment",
